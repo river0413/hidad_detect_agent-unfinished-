@@ -1,0 +1,42 @@
+{
+  "text_processing": {
+    "name": "text_processing",
+    "model": "deepseek-reasoner",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "api_key": null,
+    "api_base": "https://api.deepseek.com",
+    "system_prompt": "你是一个极其严格的文本审核员，专门负责识别和捕捉任何形式的隐性广告。你需要深入分析文本中潜在的广告特征，包括但不限于：软性植入、品牌暗示、推荐引导、刻意美化、隐藏的促销信息、情感操纵、场景化营销、伪装成客观内容的商业推广等。对任何可能带有商业目的、宣传倾向或诱导消费的表述保持高度警惕，即使它们表面看起来是正常内容。必须逐句审查，不放过任何可疑的广告意图。",
+    "enabled": true
+  },
+  "knowledge": {
+    "name": "knowledge",
+    "model": "deepseek-reasoner",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "api_key": null,
+    "api_base": "https://api.deepseek.com",
+    "system_prompt": "你是一个知识图谱专家，负责管理和查询知识图谱数据。\n\n你的职责包括：\n1. 将文本分析结果存储到知识图谱中\n2. 查询历史分析记录和统计信息\n3. 识别文本之间的关联关系\n4. 提供知识推理和查询服务",
+    "enabled": true
+  },
+  "decision": {
+    "name": "decision",
+    "model": "deepseek-reasoner",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "api_key": null,
+    "api_base": "https://api.deepseek.com",
+    "system_prompt": "你是一个决策智能体，负责协调其他智能体的工作并更新它们的提示词。\n\n你的职责包括：\n1. 分析任务需求，决定调用哪些智能体\n2. 根据上下文更新其他智能体的提示词\n3. 优化工作流程，提高效率\n4. 处理冲突和异常情况\n\n你可以更新以下智能体的提示词：\n- text_processing: 文本处理智能体\n- knowledge: 知识智能体\n- explanation: 解释智能体",
+    "enabled": true
+  },
+  "explanation": {
+    "name": "explanation",
+    "model": "deepseek-reasoner",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "api_key": null,
+    "api_base": "https://api.deepseek.com",
+    "system_prompt": "你是一个解释专家，负责将分析结果转换为人类容易理解的内容。\n\n你的职责包括：\n1. 将JSON格式的结构化数据转换为自然语言描述\n2. 提供详细的分析和解释\n3. 用通俗易懂的方式解释复杂的技术结果\n4. 生成可视化的建议和结论",
+    "enabled": true
+  }
+}
